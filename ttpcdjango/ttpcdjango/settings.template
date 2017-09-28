@@ -1,8 +1,11 @@
 from ttpcdjango.base_settings import * 
 
+## Uncomment this for development
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
 
+
+##Database connection info; adjust as needed
 
 DATABASES = {
     'default': {
