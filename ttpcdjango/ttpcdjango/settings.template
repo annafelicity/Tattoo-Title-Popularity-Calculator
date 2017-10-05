@@ -1,8 +1,9 @@
 from ttpcdjango.base_settings import *
 
+## Uncommment this for development
+# DEBUG = True
 
-DEBUG = True
-
+## Database connection information; adjust as needed
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',

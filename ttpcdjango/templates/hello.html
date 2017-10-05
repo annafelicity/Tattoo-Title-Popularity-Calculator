@@ -1,0 +1,22 @@
+<html>
+ <head>
+     <title>My app</title>
+ </head>
+ <body>
+     <div>
+        My test app.
+     </div>
+     {{ name }}
+
+     <p>
+         some colors are
+     </p>
+     <ul>
+         {% for color in colors %}
+            <li>
+                {{ color }}
+            </li>
+         {% endfor %}
+     </ul>
+ </body>
+</html>
