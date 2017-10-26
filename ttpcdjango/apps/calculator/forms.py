@@ -3,4 +3,4 @@ from django import forms
 
 class CalculateForm(forms.Form):
     text = forms.CharField(
-        label="Query", max_length=255, required=True)
+        label="Enter your title here", max_length=255, required=True)

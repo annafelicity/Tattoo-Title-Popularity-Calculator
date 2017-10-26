@@ -11,6 +11,7 @@ class QueryLog(models.Model):
         default=True)
     ip_address = models.GenericIPAddressField(
         blank=True, null=True)
+    website_origin = models.CharField(max_length=255, blank=True, null=True)
 
     created = models.DateTimeField(
         auto_now_add=True)
@@ -22,6 +23,6 @@ class QueryLog(models.Model):
         verbose_name_plural = "Queries"
         ordering = ["-created"]
 
-    def _str_(self):
+    def __str__(self):
         return "{} {}".format(
             self.id, self.query)

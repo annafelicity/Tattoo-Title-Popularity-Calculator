@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+#from django.http import HttpResponseRedirect
 from django.urls import reverse
+from .models import QueryLog
 
 from .forms import CalculateForm
 
@@ -20,7 +21,13 @@ def calculate(request):
     if request.method == 'POST':
         form = CalculateForm(request.POST)
         if form.is_valid():
-            return HttpResponseRedirect(reverse("thanks"))
+            query = form.cleaned_data.get("text")
+            ql = QueryLog(query=query)
+            ql.ip_address="1.1.1.1"
+            ql.save()
+            #this is where model will likely go
+
+            #return HttpResponseRedirect(reverse("thanks"))
     
     context = {"form": form}
     return render(request, template, context)

@@ -4,9 +4,15 @@
 	<title>Calculator Form</title>
 </head>
 <body text="#FF00FF">
+    <div style="width:600px;">
+    <strong>What book title might grab purchasers' attention?</strong>
+Have you wondered whether a word choice between, say, "Tattoo" or "Ink" would make your book stand out more from the sea of tattooing publications that seems to increase every year?
+
+Try out different book-title options below in the CFT's <strong>Tattoo Title Popularity Calculator</strong> to find out how many libraries your book might end up in over time:
+    </div>
     <form method="post" action="." novalidate>{% csrf_token %}
     	{{ form.as_p }}
-    	<input type="submit" name="submit" value="Submit!" />
+    	<input type="submit" name="submit" value="Enter" />
     </form>
 
 </body>
