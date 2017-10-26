@@ -20,4 +20,5 @@ from apps.calculator import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^hello/$', views.affirmation, name="hello"),
+    url(r'^calculate/$', views.calculate, name="calculate"),
 ]
