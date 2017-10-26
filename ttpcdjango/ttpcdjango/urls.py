@@ -16,9 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from apps.calculator import views
+from django.views.generic import TemplateView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^hello/$', views.affirmation, name="hello"),
     url(r'^calculate/$', views.calculate, name="calculate"),
+    url(r'^thanks/$', TemplateView.as_view(template_name="thanks.html"), name="thanks"),
 ]

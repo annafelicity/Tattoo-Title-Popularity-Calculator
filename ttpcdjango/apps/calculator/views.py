@@ -1,5 +1,8 @@
 from django.shortcuts import render
-from django import forms
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+
+from .forms import CalculateForm
 
 # Create your views here.
 
@@ -13,7 +16,11 @@ def affirmation(request):
 
 def calculate(request):
     template = "calculate_form.html"
-    form = forms.CalculateForm()
-    #this is my lesson stuff I'm supposed to do
+    form = CalculateForm()
+    if request.method == 'POST':
+        form = CalculateForm(request.POST)
+        if form.is_valid():
+            return HttpResponseRedirect(reverse("thanks"))
+    
     context = {"form": form}
     return render(request, template, context)
