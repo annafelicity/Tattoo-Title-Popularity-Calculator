@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django import forms
 
 # Create your views here.
 
@@ -9,3 +10,10 @@ def affirmation(request):
 	}
 	template = "hello.html"
 	return render(request, template, context)
+
+def calculate(request):
+    template = "calculate_form.html"
+    form = forms.CalculateForm()
+    #this is my lesson stuff I'm supposed to do
+    context = {"form": form}
+    return render(request, template, context)
