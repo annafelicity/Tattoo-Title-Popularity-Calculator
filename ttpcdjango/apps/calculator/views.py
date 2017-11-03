@@ -1,9 +1,11 @@
 from django.shortcuts import render
 #from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .models import QueryLog
+from ipware.ip import get_ip
 
+from .models import QueryLog
 from .forms import CalculateForm
+
 
 # Create your views here.
 
@@ -16,6 +18,7 @@ def affirmation(request):
 	return render(request, template, context)
 
 def calculate(request):
+    calculator_result = None
     template = "calculate_form.html"
     form = CalculateForm()
     if request.method == 'POST':
@@ -23,11 +26,12 @@ def calculate(request):
         if form.is_valid():
             query = form.cleaned_data.get("text")
             ql = QueryLog(query=query)
-            ql.ip_address="1.1.1.1"
+            ql.ip_address=get_ip(request)
             ql.save()
-            #this is where model will likely go
+            calculator_result = 20
+            #20 is fake number; this is where model output will go
 
             #return HttpResponseRedirect(reverse("thanks"))
     
-    context = {"form": form}
+    context = {"form": form, "calculator_result": calculator_result}
     return render(request, template, context)

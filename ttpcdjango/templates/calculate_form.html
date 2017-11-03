@@ -12,8 +12,17 @@ Try out different book-title options below in the CFT's <strong>Tattoo Title Pop
     </div>
     <form method="post" action="." novalidate>{% csrf_token %}
     	{{ form.as_p }}
-    	<input type="submit" name="submit" value="Enter" />
+    	<input type="submit" name="submit" value="{% if calculator_result %}Redo Your Query{% else %}Enter{% endif %}" />
     </form>
+    {% if calculator_result %}
+    <hr>
+    <div>
+    Your book will be held in 
+    {{ calculator_result }}
+    libraries.
+    </div>
+    {% endif %}
+{# add stuff to return results here? (for now just do "placeholder") #}
 
 </body>
 </html>

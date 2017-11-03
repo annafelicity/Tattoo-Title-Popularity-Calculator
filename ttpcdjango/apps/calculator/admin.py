@@ -4,7 +4,8 @@ from .models import QueryLog
 # Register your models here.
 
 class QueryLogAdmin(admin.ModelAdmin):
-    list_display = ['id', 'query']
+    readonly_fields = ['created', 'modified', 'ip_address']
+    list_display = ['id', 'query', 'created', 'modified']
     search_fields = ['query']
 
 
