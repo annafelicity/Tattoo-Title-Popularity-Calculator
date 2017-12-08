@@ -9,6 +9,12 @@ from .forms import CalculateForm
 
 # Create your views here.
 
+def index(request):
+    template = "index.html"
+    context = {}
+    return render(request, template, context)
+
+
 def affirmation(request):
 	context = {
 		"affirmation": "I've got this!",
