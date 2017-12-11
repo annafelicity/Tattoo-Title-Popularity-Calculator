@@ -5,6 +5,7 @@ from ipware.ip import get_ip
 
 from .models import QueryLog
 from .forms import CalculateForm
+from scripts.calculate_answer import CalculateAnswer
 
 
 # Create your views here.
@@ -34,10 +35,10 @@ def calculate(request):
             ql = QueryLog(query=query)
             ql.ip_address=get_ip(request)
             ql.save()
-            calculator_result = 20
+            calculator_result = CalculateAnswer(query)
             #20 is fake number; this is where model output will go
-
-            #return HttpResponseRedirect(reverse("thanks"))
+            #this is where it will be something like CalculateAnswer(query)
+            
     
     context = {"form": form, "calculator_result": calculator_result}
     return render(request, template, context)
