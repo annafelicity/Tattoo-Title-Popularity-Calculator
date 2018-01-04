@@ -1,5 +1,5 @@
 # Tattoo-Title-Popularity-Calculator
-Here's the code for the beta version of the Center for Tattoo History and Culture's Tattoo Title Popularity Calculator.
+Here's the code for the beta version of the Center for Tattoo History and Culture's Tattoo Title Popularity Calculator. I created this web-app interface as one of the mentees during the Fall 2017 ChiPy (Chicago Python) mentorship program. It's built using Django and is hosted on an AWS EC2 instance, then embedded in a pre-existing Wordpress site that I built using an iframe.
 
 You can find the calculator here (works best on desktop right now...still debugging): https://centerfortattoo.org/projects/tattoo-title-popularity-calculator/
 
