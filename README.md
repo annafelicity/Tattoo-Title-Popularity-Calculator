@@ -5,4 +5,9 @@ Watch me present about this as one of the top 10 finalists in the program here: 
 
 You can find the calculator here (works best on desktop right now...still debugging): https://centerfortattoo.org/projects/tattoo-title-popularity-calculator/
 
+You can read about some of the behind-the-scenes in these three Medium blog pieces:
+https://towardsdatascience.com/small-victories-building-a-web-app-with-django-and-aws-and-building-confidence-8ee9d29d744e
+https://hackernoon.com/fighting-impostor-syndrome-through-coding-affirmations-2bff242c2511
+https://towardsdatascience.com/from-middle-aged-mom-to-coding-mentee-reinvention-through-tech-77b3e5772240
+
 You can read a *long* explanation of the data science behind the predictive model here: https://github.com/annafelicity/predicting_popularity/blob/master/README.md
